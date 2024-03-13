@@ -2,4 +2,5 @@ venv_cells/*
 *.pdf
 *.mp4
 *.weights
+*all_metrics.csv
 Object-tracking-from-scratch-source_code/*
