@@ -4,3 +4,4 @@ venv_cells/*
 *.weights
 *all_metrics.csv
 Object-tracking-from-scratch-source_code/*
+data/240319_SW1573_Control_OLL452_OLL519_20uM_extracted_data/*
