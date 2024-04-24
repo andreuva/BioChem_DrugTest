@@ -5,3 +5,6 @@ venv_cells/*
 *all_metrics.csv
 Object-tracking-from-scratch-source_code/*
 data/240319_SW1573_Control_OLL452_OLL519_20uM_extracted_data/*
+models
+__pycache__
+*.pkl
