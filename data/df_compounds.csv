@@ -1,0 +1,16 @@
+Experimento,A1,A2,B1,B2,A1c,A2c,B1c,B2c
+1,Control,Taxol,Vimblastina,Colchicina,Control,Microtubule,Microtubule,Microtubule
+2,Control,Cisplatino,DTA100,,Control,DNA,Microtubule,
+3,Control,5-fluouracilo,Nocodazol,Etoposido,Control,DNA,Microtubule,DNA
+4,Control,Control,Taxol,Vimblastina,Control,Control,Microtubule,Microtubule
+5,Control,Tamoxifeno,Rapamycin,cloroquine,Control,Autophagy,Autophagy,Autophagy
+6,Control,Control,Rapamycin,cloroquine,Control,Control,Autophagy,Autophagy
+7,Vimblastina,Colchicina,DTA100,Doxorubicina,Microtubule,Microtubule,Microtubule,
+8,Etoposido,DTA100,Colchicina,Taxol,DNA,Microtubule,Microtubule,Microtubule
+9,Control,5-fluouracilo,Vimblastina,Tamoxifeno,Control,DNA,Microtubule,Autophagy
+10,Doxorubicina,DTA100,Control,Tamoxifeno,,Microtubule,Control,Autophagy
+13,Control,Taxol,Vimblastina,Colchicina,Control,Microtubule,Microtubule,Microtubule
+15,Control,OLL461,OLL465,,Control,,,
+16,Control,Taxol,Vimblastina,Colchicina,Control,Microtubule,Microtubule,Microtubule
+19,Control,LSL,XCL,MOA,Control,,,
+20,Control,ABL,TAP1,BEL,Control,,,
