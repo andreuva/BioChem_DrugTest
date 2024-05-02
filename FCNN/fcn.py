@@ -29,7 +29,6 @@ class FCNN(nn.Module):
         self.pool = nn.MaxPool1d(kernel_size=2, stride=2)
         self.fc1 = nn.Linear(512 * 12, output_classes)
         self.relu = nn.ReLU()
-        self.softmax = nn.Softmax(dim=1)
 
     def forward(self, x):
         x = self.relu(self.conv1(x))
@@ -42,5 +41,4 @@ class FCNN(nn.Module):
         x = self.pool(x)
         x = x.view(-1, 512 * 12)  # Reshape for fully connected layer
         x = self.relu(self.fc1(x))
-        x = self.softmax(x)
-        return x
+        return x.softmax(dim=1)

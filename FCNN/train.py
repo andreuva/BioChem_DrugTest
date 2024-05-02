@@ -47,7 +47,7 @@ class Formal(object):
 
         # Randomly shuffle a vector with the indices to separate between training/validation datasets
         idx = np.arange(self.dataset.n_training)
-        np.random.seed(777)
+        np.random.seed(666)
         np.random.shuffle(idx)
 
         self.train_index = idx[0:int((1-self.validation_split)*self.dataset.n_training)]
@@ -102,7 +102,7 @@ class Formal(object):
         self.loss_weights = self.dataset.weights.to(self.device)
 
         # Loss function
-        self.loss_fn = nn.CrossEntropyLoss(weight=self.loss_weights)
+        self.loss_fn = nn.CrossEntropyLoss(weight=self.loss_weights, label_smoothing=self.smooth)
 
         # Now start the training
         self.train_loss = []
@@ -134,6 +134,7 @@ class Formal(object):
 
                 print("Saving best model...")
                 torch.save(checkpoint, savedir + filename + '_best.pth')
+                self.best_filename = filename
 
             # Update the learning rate
             self.scheduler.step()
@@ -223,7 +224,8 @@ class Formal(object):
         # collect the outputs and targets and return them
 
         # first restore the best model
-        checkpoint = torch.load(self.savedir + self.filename + '_best.pth')
+        checkpoint = torch.load(self.savedir + self.best_filename + '_best.pth')
+        print("Restoring best model: {0}".format(self.savedir + self.best_filename + '_best.pth'))
         self.model.load_state_dict(checkpoint['state_dict'])
         
         self.model.eval()
@@ -256,7 +258,7 @@ if __name__ == '__main__':
     formal = Formal(batch_size=4, gpu=0, smooth=0.05, validation_split=0.25, datadir='../data/')
 
     # Optimize the model
-    formal.optimize(savedir='../models/', epochs=200, lr=1e-2)
+    formal.optimize(savedir='../models/', epochs=500, lr=1e-2)
 
     outputs, targets = formal.test()
 
